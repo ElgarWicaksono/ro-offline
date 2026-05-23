@@ -1,0 +1,70 @@
+// Custom tank/support mercenary rental.
+
+prontera,150,150,4	script	Bodyguard Manager	4_M_JOB_KNIGHT2,{
+	mes "[Bodyguard Manager]";
+	mes "I can assign you one mercenary bodyguard for one hour.";
+	next;
+
+	setarray .@merc_id[0],2217,2214,2216,2215,2213;
+	setarray .@merc_name$[0],"Bodyguard Paladin","Wicked Nymph","Salamander","Kasa","Wander Man";
+	setarray .@merc_role$[0],"Tank / Support","Support Caster","Frontline Attacker","Fire Attacker","Fast Melee Attacker";
+	setarray .@merc_level[0],85,85,87,83,81;
+	setarray .@merc_hp[0],18000,6157,9517,9815,8614;
+	setarray .@merc_sp[0],1200,256,260,234,220;
+	setarray .@merc_detail$[0],
+		"Devotion, Defender, Scapegoat, Blessing, Kyrie, Magnificat",
+		"Lex Divina, Blessing, Tender, Magnificat",
+		"Bash, Brandish Spear, Auto Berserk, Benediction",
+		"Crash, Magnum Break, Regain, Auto Berserk",
+		"Quicken, Parrying, Bowling Bash, Auto Berserk";
+
+L_Menu:
+	.@choice = select(
+		"Bodyguard Paladin - Lv.85 Tank/Support",
+		"Wicked Nymph - Lv.85 Support",
+		"Salamander - Lv.87 Frontline",
+		"Kasa - Lv.83 Fire",
+		"Wander Man - Lv.81 Melee",
+		"Cancel"
+	) - 1;
+
+	if (.@choice == 5)
+		close;
+
+	if (checkvending()) {
+		mes "[Bodyguard Manager]";
+		mes "Please close your shop first.";
+		close;
+	}
+
+	if (getmercinfo(0)) {
+		mes "[Bodyguard Manager]";
+		mes "You already have a mercenary with you.";
+		mes "Dismiss that mercenary first, then speak with me again.";
+		close;
+	}
+
+	mes "[Bodyguard Manager]";
+	mes "^0055FF" + .@merc_name$[.@choice] + "^000000";
+	mes "Level: " + .@merc_level[.@choice];
+	mes "Role: " + .@merc_role$[.@choice];
+	mes "HP / SP: " + .@merc_hp[.@choice] + " / " + .@merc_sp[.@choice];
+	mes "Skills: " + .@merc_detail$[.@choice];
+	next;
+
+	.@confirm = select("Hire this mercenary:Choose again:Cancel");
+	if (.@confirm == 2) {
+		mes "[Bodyguard Manager]";
+		mes "Choose another bodyguard.";
+		next;
+		goto L_Menu;
+	}
+	if (.@confirm == 3)
+		close;
+
+	mercenary_create .@merc_id[.@choice],3600000;
+
+	mes "[Bodyguard Manager]";
+	mes "Your " + .@merc_name$[.@choice] + " will stay with you for one hour.";
+	close;
+}

@@ -1436,3 +1436,4 @@ Footer:
   - Path: db/re/mercenary_db.yml
     Mode: Renewal
   - Path: db/import/mercenary_db.yml
+  - Path: db/bodyguard_mercenary_db.yml

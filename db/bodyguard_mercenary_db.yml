@@ -1,0 +1,47 @@
+Header:
+  Type: MERCENARY_DB
+  Version: 1
+
+Body:
+  - Id: 2217
+    AegisName: M_TEDDY_BEAR
+    Name: Bodyguard Paladin
+    Level: 85
+    Hp: 18000
+    Sp: 1200
+    Attack: 650
+    Attack2: 900
+    Defense: 120
+    MagicDefense: 90
+    Str: 70
+    Agi: 35
+    Vit: 100
+    Int: 85
+    Dex: 90
+    Luk: 80
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Element: Neutral
+    ElementLevel: 3
+    WalkSpeed: 180
+    AttackDelay: 512
+    AttackMotion: 780
+    DamageMotion: 504
+    Skills:
+      - Name: ML_DEVOTION
+        MaxLevel: 3
+      - Name: ML_DEFENDER
+        MaxLevel: 1
+      - Name: MER_SCAPEGOAT
+        MaxLevel: 1
+      - Name: MER_REGAIN
+        MaxLevel: 1
+      - Name: MER_TENDER
+        MaxLevel: 1
+      - Name: MER_BLESSING
+        MaxLevel: 5
+      - Name: MER_KYRIE
+        MaxLevel: 5
+      - Name: MER_MAGNIFICAT
+        MaxLevel: 1

@@ -1,0 +1,3 @@
+docker compose run builder bash -c './configure'
+docker compose run builder bash -c 'make clean server'
+docker compose run builder bash -c ./athena-start restart

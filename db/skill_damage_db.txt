@@ -34,3 +34,30 @@
 // MC_MAMMONITE,BL_PC,1,50 // In normal maps, players deal +50% damage to other players with Mammonite.
 // MO_EXTREMITYFIST,BL_PC,6,-50 // In PVP and GVG, players deal -50% (half) damage to other players with Asura Strike.
 // AB_ADORAMUS,BL_PC,6,50,0,10,15 // In PVP and GVG, players deal +50% damage to other players, +0% to mobs, +10% to bosses, and +15% to other with Adoramus.
+
+// Custom: strengthen player magic in normal PvE maps.
+// Format: SkillName,BL_PC,NormalMap,Players,Mobs,Bosses,Other
+// 50 means +50% damage. PvP/GvG/BG are intentionally unaffected.
+MG_NAPALMBEAT,BL_PC,1,0,50,50,0
+MG_SOULSTRIKE,BL_PC,1,0,50,50,0
+MG_COLDBOLT,BL_PC,1,0,50,50,0
+MG_FIREBOLT,BL_PC,1,0,50,50,0
+MG_LIGHTNINGBOLT,BL_PC,1,0,50,50,0
+MG_FIREBALL,BL_PC,1,0,50,50,0
+MG_FIREWALL,BL_PC,1,0,50,50,0
+WZ_EARTHSPIKE,BL_PC,1,0,50,50,0
+WZ_HEAVENDRIVE,BL_PC,1,0,50,50,0
+WZ_JUPITEL,BL_PC,1,0,50,50,0
+WZ_VERMILION,BL_PC,1,0,50,50,0
+WZ_STORMGUST,BL_PC,1,0,50,50,0
+WZ_METEOR,BL_PC,1,0,50,50,0
+WZ_WATERBALL,BL_PC,1,0,50,50,0
+HW_NAPALMVULCAN,BL_PC,1,0,50,50,0
+HW_MAGICCRASHER,BL_PC,1,0,50,50,0
+WL_EARTHSTRAIN,BL_PC,1,0,50,50,0
+WL_CHAINLIGHTNING,BL_PC,1,0,50,50,0
+WL_CRIMSONROCK,BL_PC,1,0,50,50,0
+WL_DRAINLIFE,BL_PC,1,0,50,50,0
+WL_HELLINFERNO,BL_PC,1,0,50,50,0
+WL_JACKFROST,BL_PC,1,0,50,50,0
+WL_COMET,BL_PC,1,0,50,50,0
