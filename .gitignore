@@ -62,12 +62,9 @@ Thumbs.db
 /3rdparty/httplib/obj
 
 # /db/
-/db/import
 
 # /conf/
-/conf/import
 /conf/msg_conf/import
-/conf/deployment_notes.txt
 
 
 # /lib
