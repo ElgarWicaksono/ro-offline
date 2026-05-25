@@ -45,6 +45,7 @@ Thumbs.db
 /yaml2sql
 /yamlupgrade
 /deployment_notes.txt
+/deploy.sh
 
 # /3rdparty/libconfig/
 /3rdparty/libconfig/Makefile
