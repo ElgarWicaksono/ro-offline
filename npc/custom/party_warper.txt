@@ -76,3 +76,5 @@ prontera,160,185,5	script	Party Warper	4_F_KAFRA1,{
 	warp .@map$, .@x, .@y;
 	end;
 }
+
+aldebaran,143,119,5	duplicate(Party Warper)	Party Warper#alde	4_F_KAFRA1
