@@ -1,0 +1,78 @@
+//===== rAthena Script =======================================
+//= Party Warper
+//===== Description: =========================================
+//= Lets a player warp to an online member from their party list.
+//============================================================
+
+prontera,160,185,5	script	Party Warper	4_F_KAFRA1,{
+	mes "[Party Warper]";
+	mes "I can send you to an online party member.";
+
+	.@party_id = getcharid(1);
+	if (.@party_id == 0) {
+		next;
+		mes "[Party Warper]";
+		mes "You are not in a party.";
+		close;
+	}
+
+	getpartymember .@party_id, 0;
+	.@count = $@partymembercount;
+	copyarray .@name$[0], $@partymembername$[0], .@count;
+
+	getpartymember .@party_id, 1;
+	copyarray .@cid[0], $@partymembercid[0], .@count;
+
+	getpartymember .@party_id, 2;
+	copyarray .@aid[0], $@partymemberaid[0], .@count;
+
+	for (.@i = 0; .@i < .@count; .@i++) {
+		if (.@name$[.@i] == strcharinfo(0))
+			continue;
+		if (!isloggedin(.@aid[.@i], .@cid[.@i]))
+			continue;
+		if (getmapxy(.@map$, .@x, .@y, BL_PC, .@name$[.@i]) != 0)
+			continue;
+		if (getmapflag(.@map$, MF_NOWARP) || getmapflag(.@map$, MF_NOWARPTO) || getmapflag(.@map$, MF_NOTELEPORT))
+			continue;
+
+		.@target_name$[.@online] = .@name$[.@i];
+		.@target_map$[.@online] = .@map$;
+		.@target_x[.@online] = .@x;
+		.@target_y[.@online] = .@y;
+		.@menu$ = .@menu$ + .@name$[.@i] + " (" + .@map$ + "):";
+		.@online++;
+	}
+
+	if (.@online == 0) {
+		next;
+		mes "[Party Warper]";
+		mes "I could not find any online party members I can warp you to.";
+		close;
+	}
+
+	next;
+	mes "[Party Warper]";
+	mes "Choose a party member.";
+	.@pick = select(.@menu$) - 1;
+
+	if (getcharid(1, .@target_name$[.@pick]) != .@party_id) {
+		mes "[Party Warper]";
+		mes "That character is no longer in your party.";
+		close;
+	}
+	if (getmapxy(.@map$, .@x, .@y, BL_PC, .@target_name$[.@pick]) != 0) {
+		mes "[Party Warper]";
+		mes "That character is no longer online.";
+		close;
+	}
+	if (getmapflag(.@map$, MF_NOWARP) || getmapflag(.@map$, MF_NOWARPTO) || getmapflag(.@map$, MF_NOTELEPORT)) {
+		mes "[Party Warper]";
+		mes "I cannot warp you to that map.";
+		close;
+	}
+
+	close2;
+	warp .@map$, .@x, .@y;
+	end;
+}
