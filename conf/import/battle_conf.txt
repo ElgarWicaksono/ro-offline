@@ -24,9 +24,12 @@ item_rate_equip_mvp: 1000
 item_drop_equip_min: 1
 item_drop_equip_max: 10000
 // The rate at which cards are dropped
-item_rate_card: 500
-item_rate_card_boss: 1000
-item_rate_card_mvp: 1000
+// Most cards have Rate: 1 in mob_db, which is 0.01%.
+// 10000 = 100x = 1% normal/boss card rate.
+// 30000 = 300x = 3% MVP card rate.
+item_rate_card: 10000
+item_rate_card_boss: 10000
+item_rate_card_mvp: 30000
 item_drop_card_min: 1
 item_drop_card_max: 10000
 // The rate adjustment for the MVP items that the MVP gets directly in their inventory
