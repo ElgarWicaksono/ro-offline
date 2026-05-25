@@ -30,23 +30,21 @@ Thumbs.db
 *.o
 *.a
 *.vcxproj.user
-/char-server
 /csv2yaml
 /config.log
 /config.status
 /core
 /enc_temp_folder
 /ipch
-/login-server
 /Makefile
 /Makefile.cache
 /map-server
 /map-server-generator
 /mapcache
 /nbproject
-/web-server
 /yaml2sql
 /yamlupgrade
+/deployment_notes.txt
 
 # /3rdparty/libconfig/
 /3rdparty/libconfig/Makefile
@@ -69,6 +67,8 @@ Thumbs.db
 # /conf/
 /conf/import
 /conf/msg_conf/import
+/conf/deployment_notes.txt
+
 
 # /lib
 /lib
