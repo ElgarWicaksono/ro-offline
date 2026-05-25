@@ -92,7 +92,11 @@ Body:
       channel: true
       langtype: true
     Permissions:
+      can_trade: true
+      can_party: true
+      all_commands: true
       attendance: false
+      command_enable: true
   - Id: 2
     Name: Support
     Inherit:
