@@ -103,8 +103,8 @@
 		}
 
 		if (.@Spirit) {
-			specialeffect2 EF_SOULLINK;
-			sc_start2 SC_SPIRIT,1800000,5,.@Spirit;
+			sc_start2(SC_SOULLINK, 1800000, 5, .@Spirit);
+        	skilleffect(.@Spirit, 5);
 		}
 	}
 	if (.@Delay)
