@@ -36,6 +36,8 @@
 		sc_start SC_INCREASEAGI,1800000,10;
 		specialeffect2 EF_BLESSING;
 		sc_start SC_BLESSING,1800000,10;
+		
+		.@Spirit = 0;
 
 		switch (BaseJob) {
 			case Job_Knight:
