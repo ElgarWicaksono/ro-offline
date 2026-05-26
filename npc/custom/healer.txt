@@ -36,40 +36,92 @@
 		sc_start SC_INCREASEAGI,1800000,10;
 		specialeffect2 EF_BLESSING;
 		sc_start SC_BLESSING,1800000,10;
+		
 		.@Spirit = 0;
-		switch (BaseJob) {
-			case Job_Knight:	.@Spirit = SL_KNIGHT; break;
-			case Job_Crusader:	.@Spirit = SL_CRUSADER; break;
-			case Job_Wizard:	.@Spirit = SL_WIZARD; break;
-			case Job_Sage:		.@Spirit = SL_SAGE; break;
-			case Job_Priest:	.@Spirit = SL_PRIEST; break;
-			case Job_Monk:		.@Spirit = SL_MONK; break;
-			case Job_Hunter:	.@Spirit = SL_HUNTER; break;
-			case Job_Bard:
-			case Job_Dancer:	.@Spirit = SL_BARDDANCER; break;
-			case Job_Assassin:	.@Spirit = SL_ASSASIN; break;
-			case Job_Rogue:		.@Spirit = SL_ROGUE; break;
-			case Job_Blacksmith:	.@Spirit = SL_BLACKSMITH; break;
-			case Job_Alchemist:	.@Spirit = SL_ALCHEMIST; break;
-			case Job_Super_Novice:	.@Spirit = SL_SUPERNOVICE; break;
-			case Job_Star_Gladiator:	.@Spirit = SL_STAR; break;
-			case Job_Soul_Linker:	.@Spirit = SL_SOULLINKER; break;
-		}
+
 		switch (Class) {
-			case Job_Super_Novice:
-			case Job_Super_Novice_E:
-			case Job_Super_Baby:
-			case Job_Super_Baby_E:
-				.@Spirit = SL_SUPERNOVICE;
+			case Job_Knight:
+			case Job_Knight2:
+			case Job_Lord_Knight:
+				.@Spirit = Job_Knight;
 				break;
+
+			case Job_Wizard:
+			case Job_High_Wizard:
+				.@Spirit = Job_Wizard;
+				break;
+
+			case Job_Priest:
+			case Job_High_Priest:
+				.@Spirit = Job_Priest;
+				break;
+
+			case Job_Hunter:
+			case Job_Sniper:
+				.@Spirit = Job_Hunter;
+				break;
+
+			case Job_Blacksmith:
+			case Job_Whitesmith:
+				.@Spirit = Job_Blacksmith;
+				break;
+
+			case Job_Assassin:
+			case Job_Assassin_Cross:
+				.@Spirit = Job_Assassin;
+				break;
+
+			case Job_Crusader:
+			case Job_Crusader2:
+			case Job_Paladin:
+			case Job_Paladin2:
+				.@Spirit = Job_Crusader;
+				break;
+
+			case Job_Monk:
+			case Job_Champion:
+				.@Spirit = Job_Monk;
+				break;
+
+			case Job_Sage:
+			case Job_Professor:
+				.@Spirit = Job_Sage;
+				break;
+
+			case Job_Rogue:
+			case Job_Stalker:
+				.@Spirit = Job_Rogue;
+				break;
+
+			case Job_Alchemist:
+			case Job_Creator:
+				.@Spirit = Job_Alchemist;
+				break;
+
+			case Job_Bard:
+			case Job_Clown:
+				.@Spirit = Job_Bard;
+				break;
+
+			case Job_Dancer:
+			case Job_Gypsy:
+				.@Spirit = Job_Dancer;
+				break;
+
+			case Job_Super_Novice:
+				.@Spirit = Job_Super_Novice;
+				break;
+
+			case Job_Soul_Linker:
+				.@Spirit = Job_Soul_Linker;
+				break;
+
 			case Job_Star_Gladiator:
 			case Job_Star_Gladiator2:
-				.@Spirit = SL_STAR;
-				break;
-			case Job_Soul_Linker:
-				.@Spirit = SL_SOULLINKER;
+				.@Spirit = Job_Star_Gladiator;
 				break;
 		}
+
 		if (.@Spirit) {
 			specialeffect2 EF_SOULLINK;
 			sc_start2 SC_SPIRIT,1800000,5,.@Spirit;
