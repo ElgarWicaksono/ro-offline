@@ -2703,6 +2703,10 @@ OnTimer1000:
 		makeitem 7228,1,'map_name$,.@xy[0]+2,.@xy[1]+2;	// Gold_Bullion
 	if (rand(1,1000) > 900)
 		makeitem 7229,1,'map_name$,.@xy[0]+3,.@xy[1]+2;	// Silver_Bullion
+	if (rand(10000) < 3000)
+		makeitem 490288,1,'map_name$,.@xy[0]+2,.@xy[1]+4; // Record_Mage_TH
+	if (rand(10000) < 3000)
+		makeitem 490418,1,'map_name$,.@xy[0]+3,.@xy[1]+4; // Record_Mage2_TH
 	stopnpctimer;
 	end;
 OnInstanceInit:

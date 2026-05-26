@@ -2026,6 +2026,8 @@ OnBossDead:
 		makeitem 616,1, 'map_tnm3$, (69 + rand(-5,5)), (70 + rand(-5,5));	// Old Card Album
 	if (rand(100) < 50)
 		makeitem 748,1, 'map_tnm3$, (69 + rand(-5,5)), (70 + rand(-5,5));	// Witherless_Rose
+	if (rand(10000) < 3000)
+		makeitem 480166,1, 'map_tnm3$, (69 + rand(-5,5)), (70 + rand(-5,5));	// Subject_CapeMagic_TH
 
 	setarray .@item_id_list[0],
 		1671,	// Devil_Won_Staff

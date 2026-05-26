@@ -855,6 +855,8 @@ OnMobDead:
 		if (countitem(1000099) == 0) {
 			npctalk "Oh, I forgot to make regular contact! I'll get in touch. Would you like a cookie while you're here?", "", bc_self;
 			getitem 1000099,1;
+			if (rand(10000) < 3000)
+				getitem 640039,1; // Hs_Wz_Magical_Staff
 			end;
 		}
 		npctalk "Do not worry, I already contacted Alpha. Hehe.", "", bc_self;

@@ -828,6 +828,8 @@ OnMyMobDead:
 				else continue;
 				makeitem .@item,1,.@map$,rand(40,77),rand(87,120);
 			}
+			if (rand(10000) < 3000)
+				makeitem 5138,1,.@map$,rand(40,77),rand(87,120); // Magic_Eyes
 		} else if (.@i$ == "h") {
 			for(set .@i,0; .@i<10; set .@i,.@i+1) {
 				set .@j, rand(1,5001);
@@ -839,6 +841,8 @@ OnMyMobDead:
 				else continue;
 				makeitem .@item,1,.@map$,rand(40,77),rand(87,120);
 			}
+			if (rand(10000) < 3000)
+				makeitem 5138,1,.@map$,rand(40,77),rand(87,120); // Magic_Eyes
 		}
 	} else
 		mapannounce strnpcinfo(4),"There are still monsters alive.",bc_map,"0x00ff99",FW_NORMAL,20;

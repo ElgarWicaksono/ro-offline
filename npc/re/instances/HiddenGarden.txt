@@ -2080,6 +2080,8 @@ OnTouch:	// unknown effect
 		close2;
 		erasequest .@qid;
 		getitem 1000103,6;
+		if (rand(10000) < 3000)
+			getitem 550096,1; // Hs_Wz_Wand
 		if (.@qid == 12500) {
 			if (rand(1,100) < 95)
 				getitem 1000104,rand(1,5);

@@ -1455,6 +1455,8 @@ OnEnable:
 
 OnMyMobDead:
 	mapannounce instance_mapname("1@sara"), "Doyen Irene has fallen.",bc_map,"0xffff00";
+	if (rand(10000) < 3000)
+		makeitem 420003,1,instance_mapname("1@sara"),155,226;	// CD_In_MouthK
 	donpcevent instance_npcname("Doyen Irene#04", instance_id())+"::OnEnable";
 	end;
 }

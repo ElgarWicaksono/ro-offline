@@ -447,6 +447,8 @@ OnTimer10000:
 			completequest 12452;
 		getitem 25668,1;
 		getitem 25723,5;
+		if (rand(10000) < 3000)
+			getitem 640039,1; // Hs_Wz_Magical_Staff
 		getexp 300000,300000;
 		close;
 	}
@@ -481,6 +483,8 @@ OnTimer10000:
 		getexp 150000,150000;
 		getitem 25669,5;
 		getitem 25723,1;
+		if (rand(10000) < 3000)
+			getitem 550096,1; // Hs_Wz_Wand
 		next;
 		mes "[Operation Officer]";
 		mes "Even though it's a CP7 Rated, sorry I couldn't give you more experience.";

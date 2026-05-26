@@ -1162,6 +1162,10 @@ OnTouch:
 		specialeffect EF_PNEUMA;
 	}
 	getitem .@item_id, 1;
+	if (rand(10000) < 3000)
+		getitem 640038,1; // Hs_Wz_Staff
+	if (rand(10000) < 3000)
+		getitem 400338,1; // Hs_Wizardry_Hat
 	mes "- you've found the " + getitemname(.@item_id) + ". -";
 	close;
 OnBar:

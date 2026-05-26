@@ -1477,6 +1477,8 @@ OnTimer1000:
 			makeitem 22534,1, 'xm_d_map$,227,136;// Closedmind_Box
 		break;
 	}
+	if (rand(10000) < 3000)
+		makeitem 480166,1, 'xm_d_map$,210,141; // Subject_CapeMagic_TH
 	stopnpctimer;
 	end;
 }

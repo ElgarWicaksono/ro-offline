@@ -829,6 +829,8 @@ OnEnable:
 OnMyMobDead:
 	donpcevent instance_npcname("Kruger#")+"::OnEnable";
 	set .@map$, instance_mapname("2@orcs");
+	if (rand(10000) < 3000)
+		makeitem 5138,1,.@map$,185,8; // Magic_Eyes
 	set .@mob_ran,rand(1,5);
 	if (.@mob_ran == 1) {
 		mapannounce .@map$, "Shaman Cargalache: How... How could this be... How could someone like you...!!",bc_map,"0xffff00";

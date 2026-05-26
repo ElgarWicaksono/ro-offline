@@ -1177,6 +1177,10 @@ OnTimer40000:
 	mes "Hmm. The engineers need to repair the occupied base. It's time for battle force step outside.";
 	if (isbegin_quest(12374) == 1) {
 		getitem 25155,10;// Swz_Honor_Token
+		if (rand(10000) < 3000)
+			getitem 640038,1; // Hs_Wz_Staff
+		if (rand(10000) < 3000)
+			getitem 400338,1; // Hs_Wizardry_Hat
 		completequest 12374;// Heart Hunter Base occupation
 		terra_gloria_main = 20;
 	}

@@ -1000,6 +1000,10 @@ OnTouch:
 		if (is_party_leader() == true) {
 			getitem 25179,1;	// Blessing_Star
 			getitem 23087,1;	// Small_Leather_Bag
+			if (rand(10000) < 3000)
+				getitem 640038,1; // Hs_Wz_Staff
+			if (rand(10000) < 3000)
+				getitem 400338,1; // Hs_Wizardry_Hat
 			erasequest 7739;// Find Star of Blessing!
 			setquest 7740;// Star of Blessing obtained
 			terra_gloria_main = 22;

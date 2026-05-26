@@ -1908,6 +1908,10 @@ OnTouch:
 		setquest 9337;// Wrapping up the Adventure
 		getitem 607,1;// Yggdrasilberry
 		getitem 608,1;// Seed_Of_Yggdrasil
+		if (rand(10000) < 3000)
+			getitem 490288,1; // Record_Mage_TH
+		if (rand(10000) < 3000)
+			getitem 490418,1; // Record_Mage2_TH
 		close2;
 		cutin "",255;
 		end;

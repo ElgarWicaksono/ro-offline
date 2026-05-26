@@ -681,6 +681,8 @@ OnTouch:
 	mes "I don't need this novice box. You can take it. Now, let's go out side!";
 	close2;
 	getitem 23302,1;	// PoringsPreciousBox
+	if (rand(10000) < 3000)
+		getitem 420003,1;	// CD_In_MouthK
 	warp "prt_fild05",149,238;
 	end;
 }
