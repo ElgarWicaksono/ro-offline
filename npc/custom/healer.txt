@@ -37,7 +37,7 @@
 		specialeffect2 EF_BLESSING;
 		sc_start SC_BLESSING,1800000,10;
 		
-		.@Spirit = SL_SAGE;
+		.@Spirit = 0;
 
 		switch (BaseJob) {
 			case Job_Knight:
@@ -100,6 +100,10 @@
 			case Job_Star_Gladiator:
 				.@Spirit = SL_STAR;
 				break;
+				
+			default: 
+				dispbottom "Your class does not have a valid Soul Link.";
+				end;
 		}
 
 		if (.@Spirit) {
