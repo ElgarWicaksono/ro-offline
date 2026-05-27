@@ -16,7 +16,10 @@
 -	script	Healer	-1,{
 
 	.@Price = 0;	// Zeny required for heal
-	.@Buffs = 1;	// Also buff players? (1: yes / 0: no)
+	.@Buffs = 0;	// Also buff players? (1: yes / 0: no)
+	.@SoulLink = 1;	// Also soul link players based on job? (1: yes / 0: no)
+	.@SoulLinkLevel = 5;	// Soul Link skill level
+	.@SoulLinkDuration = 350000;	// Soul Link duration in milliseconds
 	.@Delay = 0;	// Heal delay, in seconds
 
 	if (@HD > gettimetick(2))
@@ -33,46 +36,64 @@
 	percentheal 100,100;
 	if (.@Buffs) {
 		specialeffect2 EF_INCAGILITY;
-		sc_start SC_INCREASEAGI,1800000,10;
+		sc_start SC_INCREASEAGI,240000,10;
 		specialeffect2 EF_BLESSING;
-		sc_start SC_BLESSING,1800000,10;
+		sc_start SC_BLESSING,240000,10;
+	}
+	if (.@SoulLink) {
 		.@Spirit = 0;
+
 		switch (BaseJob) {
-			case Job_Knight:	.@Spirit = SL_KNIGHT; break;
-			case Job_Crusader:	.@Spirit = SL_CRUSADER; break;
-			case Job_Wizard:	.@Spirit = SL_WIZARD; break;
-			case Job_Sage:		.@Spirit = SL_SAGE; break;
-			case Job_Priest:	.@Spirit = SL_PRIEST; break;
-			case Job_Monk:		.@Spirit = SL_MONK; break;
-			case Job_Hunter:	.@Spirit = SL_HUNTER; break;
-			case Job_Bard:
-			case Job_Dancer:	.@Spirit = SL_BARDDANCER; break;
-			case Job_Assassin:	.@Spirit = SL_ASSASIN; break;
-			case Job_Rogue:		.@Spirit = SL_ROGUE; break;
-			case Job_Blacksmith:	.@Spirit = SL_BLACKSMITH; break;
-			case Job_Alchemist:	.@Spirit = SL_ALCHEMIST; break;
-			case Job_Super_Novice:	.@Spirit = SL_SUPERNOVICE; break;
-			case Job_Star_Gladiator:	.@Spirit = SL_STAR; break;
-			case Job_Soul_Linker:	.@Spirit = SL_SOULLINKER; break;
-		}
-		switch (Class) {
-			case Job_Super_Novice:
-			case Job_Super_Novice_E:
-			case Job_Super_Baby:
-			case Job_Super_Baby_E:
-				.@Spirit = SL_SUPERNOVICE;
-				break;
-			case Job_Star_Gladiator:
-			case Job_Star_Gladiator2:
-				.@Spirit = SL_STAR;
-				break;
-			case Job_Soul_Linker:
-				.@Spirit = SL_SOULLINKER;
-				break;
+		case Job_Knight:
+			.@Spirit = 452; // SL_KNIGHT
+			break;
+		case Job_Priest:
+			.@Spirit = 454; // SL_PRIEST
+			break;
+		case Job_Wizard:
+			.@Spirit = 453; // SL_WIZARD
+			break;
+		case Job_Blacksmith:
+			.@Spirit = 458; // SL_BLACKSMITH
+			break;
+		case Job_Hunter:
+			.@Spirit = 460; // SL_HUNTER
+			break;
+		case Job_Assassin:
+			.@Spirit = 457; // SL_ASSASIN
+			break;
+		case Job_Crusader:
+			.@Spirit = 450; // SL_CRUSADER
+			break;
+		case Job_Monk:
+			.@Spirit = 447; // SL_MONK
+			break;
+		case Job_Sage:
+			.@Spirit = 449; // SL_SAGE
+			break;
+		case Job_Rogue:
+			.@Spirit = 456; // SL_ROGUE
+			break;
+		case Job_Alchemist:
+			.@Spirit = 445; // SL_ALCHEMIST
+			break;
+		case Job_Bard:
+		case Job_Dancer:
+			.@Spirit = 455; // SL_BARDDANCER
+			break;
+		case Job_Super_Novice:
+			.@Spirit = 451; // SL_SUPERNOVICE
+			break;
+		case Job_Star_Gladiator:
+			.@Spirit = 448; // SL_STAR
+			break;
+		case Job_Soul_Linker:
+			.@Spirit = 461; // SL_SOULLINKER
+			break;
 		}
 		if (.@Spirit) {
-			specialeffect2 EF_SOULLINK;
-			sc_start2 SC_SPIRIT,1800000,5,.@Spirit;
+			sc_start2 SC_SPIRIT,.@SoulLinkDuration,.@SoulLinkLevel,.@Spirit;
+			skilleffect .@Spirit,0;
 		}
 	}
 	if (.@Delay)
