@@ -10072,9 +10072,9 @@ Body:
       - Item: Red_Muffler
         Rate: 5
       - Item: Carga_Mace
-        Rate: 10
+        Rate: 20
       - Item: Brooch_
-        Rate: 10
+        Rate: 15
       - Item: Oridecon
         Rate: 67
       - Item: Anolian_Card
