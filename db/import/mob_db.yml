@@ -82,6 +82,37 @@ Header:
   Type: MOB_DB
   Version: 5
 
+Body:
+  - Id: 1782 # Roween, level 95
+    Drops:
+      - Item: Sorc_Night_Cap
+        Rate: 100
+  - Id: 1784 # Stapo, level 95
+    Drops:
+      - Item: Robe_Of_Elemental
+        Rate: 100
+  - Id: 1368 # Geographer, level 73
+    Drops:
+      - Item: Prohibited_Grimoire
+        Rate: 100
+  - Id: 1306 # Leib Olmai, level 118
+    Drops:
+      - Item: Book_of_Sorcery
+        Rate: 100
+  - Id: 2084 # Two-Horned Scaraba, level 134
+    Drops:
+      - Item: Origin_Of_Elemental_J
+        Rate: 100
+  - Id: 1170
+    Drops:
+      - Item: Nurse_Cap
+        Rate: 20
+      - Item: Muffler_
+        Rate: 20
+      - Item: Stiletto_
+        Rate: 20
+      - Item: Puente_Robe
+        Rate: 15
 #Body:
 # eAthena Dev Team
 #=============================================================
@@ -1146,25 +1177,3 @@ Header:
 #      - Item: Zombie_Master_Card
 #        Rate: 1
 #        StealProtected: true
-
-Body:
-  - Id: 1782 # Roween, level 95
-    Drops:
-      - Item: Sorc_Night_Cap
-        Rate: 100
-  - Id: 1784 # Stapo, level 95
-    Drops:
-      - Item: Robe_Of_Elemental
-        Rate: 100
-  - Id: 1368 # Geographer, level 73
-    Drops:
-      - Item: Prohibited_Grimoire
-        Rate: 100
-  - Id: 1306 # Leib Olmai, level 118
-    Drops:
-      - Item: Book_of_Sorcery
-        Rate: 100
-  - Id: 2084 # Two-Horned Scaraba, level 134
-    Drops:
-      - Item: Origin_Of_Elemental_J
-        Rate: 100
