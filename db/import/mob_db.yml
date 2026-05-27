@@ -107,12 +107,16 @@ Body:
     Drops:
       - Item: Nurse_Cap
         Rate: 20
+        Index: 2
       - Item: Muffler_
         Rate: 20
+        Index: 3
       - Item: Stiletto_
         Rate: 20
+        Index: 4
       - Item: Puente_Robe
         Rate: 15
+        Index: 5
 #Body:
 # eAthena Dev Team
 #=============================================================
