@@ -41,5 +41,5 @@ item_drop_mvp_mode: 0
 base_exp_rate: 1000
 job_exp_rate: 1000
 multi_level_up: yes
-mvp_exp_rate: 100
-quest_exp_rate: 200
+mvp_exp_rate: 1000
+quest_exp_rate: 1000
