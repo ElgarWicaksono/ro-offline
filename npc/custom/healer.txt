@@ -16,7 +16,7 @@
 -	script	Healer	-1,{
 
 	.@Price = 0;	// Zeny required for heal
-	.@Buffs = 0;	// Also buff players? (1: yes / 0: no)
+	.@Buffs = 1;	// Also buff players? (1: yes / 0: no)
 	.@SoulLink = 1;	// Also soul link players based on job? (1: yes / 0: no)
 	.@SoulLinkLevel = 5;	// Soul Link skill level
 	.@SoulLinkDuration = 1800000;	// Soul Link duration in milliseconds
