@@ -10064,17 +10064,17 @@ Body:
     Ai: 21
     Drops:
       - Item: Anolian_Skin
-        Rate: 2425
+        Rate: 3000
       - Item: Crystal_Arrow_Container
         Rate: 40
       - Item: Royal_Jelly
-        Rate: 3
+        Rate: 60
       - Item: Red_Muffler
         Rate: 5
       - Item: Carga_Mace
-        Rate: 1
+        Rate: 10
       - Item: Brooch_
-        Rate: 1
+        Rate: 10
       - Item: Oridecon
         Rate: 67
       - Item: Anolian_Card
