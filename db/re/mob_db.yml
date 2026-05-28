@@ -5789,7 +5789,7 @@ Body:
       - Item: Biretta_
         Rate: 5
       - Item: Bone_Wand
-        Rate: 1
+        Rate: 40
       - Item: Ragamuffin_Cape
         Rate: 1
       - Item: Scarlet_Bible

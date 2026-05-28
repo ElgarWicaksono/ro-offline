@@ -1,0 +1,66 @@
+//===== rAthena Script =======================================
+//= Heroic Backpack Quest
+//===== By: ==================================================
+//= Custom
+//===== Compatible With: =====================================
+//= rAthena Project
+//===== Description: =========================================
+//= Repeatable custom quest for Adventurer's Backpack.
+//============================================================
+
+prontera,172,180,4	script	Heroic Backpack Crafter	4_M_REPAIR,{
+	setarray .@Items[0],
+		968,10,		// Heroic Emblem
+		916,300,	// Feather of Birds
+		1059,100,	// Fabric
+		7200,30,	// Elastic Band
+		1019,50,	// Trunk
+		714,1;		// Emperium
+	set .@Zeny,2000000;
+	set .@Reward,2576; // Adventurer's Backpack / Bravery_Bag
+	set .@n$,"[Heroic Backpack Crafter]";
+
+	mes .@n$;
+	mes "A hero needs more than courage.";
+	mes "They need a pack that survives the road.";
+	next;
+	mes .@n$;
+	mes "I can craft a ^0055FFHeroic Backpack^000000 for you.";
+	mes "Bring me these materials:";
+	for (set .@i,0; .@i<getarraysize(.@Items); set .@i,.@i+2) {
+		set .@id,.@Items[.@i];
+		set .@amount,.@Items[.@i+1];
+		mes " ~ "+.@amount+"x "+((countitem(.@id) < .@amount)?"^FF0000":"^0055FF")+getitemname(.@id)+"^000000";
+	}
+	mes " ~ "+.@Zeny+" Zeny";
+	next;
+	if (select("Craft the backpack:Cancel") == 2) {
+		mes .@n$;
+		mes "Come back when your supplies are ready.";
+		close;
+	}
+
+	mes .@n$;
+	for (set .@i,0; .@i<getarraysize(.@Items); set .@i,.@i+2) {
+		if (countitem(.@Items[.@i]) < .@Items[.@i+1]) {
+			mes "You are still missing some materials.";
+			close;
+		}
+	}
+	if (Zeny < .@Zeny) {
+		mes "You do not have enough Zeny.";
+		close;
+	}
+	if (!checkweight(.@Reward,1)) {
+		mes "You are carrying too much. Make some room first.";
+		close;
+	}
+
+	for (set .@i,0; .@i<getarraysize(.@Items); set .@i,.@i+2)
+		delitem .@Items[.@i],.@Items[.@i+1];
+	set Zeny,Zeny-.@Zeny;
+	getitem .@Reward,1;
+	mes "Done. Wear it well.";
+	emotion ET_CONGRATULATION;
+	close;
+}
