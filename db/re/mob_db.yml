@@ -32926,7 +32926,7 @@ Body:
       - Item: Old_Violet_Box
         Rate: 20
       - Item: Valkyrja's_Shield
-        Rate: 50
+        Rate: 1000
   - Id: 1766
     AegisName: EM_ANGELING
     Name: Angeling
